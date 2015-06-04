@@ -11,7 +11,7 @@ I had a tiny embedded linux device which i wanted to use for learning a language
 
 dump some flashcard csv-files in flashcards/ and run:
 
-    $ ./flashcard
+    $ ./flashcard flashcards/*.csv
 
 > NOTE: see flashcards/example.csv or use CSV exporters for ANKI flashcards
 

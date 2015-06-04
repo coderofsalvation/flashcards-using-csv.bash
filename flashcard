@@ -8,13 +8,12 @@ flashcards_arr=()
 blacklist=()
 
 init(){
-  cat $SELF_DIR/flashcards/*.csv > /tmp/.flashcards
+  cat "$@" > /tmp/.flashcards
 }
 
 prompt(){
   index=$1; echo "" 
   read -p "p) too easy              " answer
-  echo "answer=$answer"
   [[ "$answer" == "p" ]] && {
     blacklist+=($index)
     [[ -n $DEBUG ]] && echo "blacklist=${blacklist[*]}";
@@ -56,4 +55,4 @@ run(){
   run # recurse..learn forever :)
 }
 
-init && run
+init "$@" && run
