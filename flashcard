@@ -17,9 +17,8 @@ prompt(){
   echo "answer=$answer"
   [[ "$answer" == "p" ]] && {
     blacklist+=($index)
-    echo "blacklist=${blacklist[*]}";
+    [[ -n $DEBUG ]] && echo "blacklist=${blacklist[*]}";
   }
-  read -p "flop" flop
 }
     
 rand(){
@@ -43,8 +42,8 @@ run(){
   local i=0; while read line; do 
     flashcards_arr+=( "${line//\"/}" )
   done < /tmp/.flashcards
-  for((i=0;i<${#flashcards_arr[@]};i++)); do
-    inarray $i "${blacklist[@]}" && continue 
+  i=$(rand ${#flashcards_arr[@]})
+  inarray $i "${blacklist[@]}" || {
     line="${flashcards_arr[$i]}"
     question=$(( $(rand 2) + 1 ))
     [[ $question == 1 ]] && answer=2 || answer=1
@@ -52,8 +51,8 @@ run(){
     echo -e "$line\n" | cut -d, -f$question
     read -p "" foo 
     echo -e "$line\n" | cut -d, -f$answer
-    prompt $i
-  done
+    prompt $i;
+  }
   run # recurse..learn forever :)
 }
 
