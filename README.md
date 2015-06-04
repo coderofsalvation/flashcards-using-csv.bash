@@ -9,6 +9,8 @@ I had a tiny embedded linux device which i wanted to use for learning a language
 
 ## How to use 
 
+`flashcard <csvfile> <...>`
+
 dump some flashcard csv-files in flashcards/ and run:
 
     $ ./flashcard flashcards/*.csv
@@ -17,7 +19,13 @@ dump some flashcard csv-files in flashcards/ and run:
 
 ## In action
 
-When running you will be presented a question
+Suppose we passed this csv:
+
+        "i am a pancake","ik ben een pannekoek"
+        "i am a boy","ik ben een jongen"
+        "you are a pancake","jij bent een pannekoek"
+
+We would get this (random) question in the terminal:
 
       i am a boy
 
@@ -34,4 +42,6 @@ Now you'll see:
       
       p) too easy     
 
-Pressing enter will repeat the question at a later time, and p will ignore it in the future.
+Pressing enter will repeat the question at a later time, and 'p' will ignore the entry in the future.
+
+> FUN FACT: questions are random, and question/answers are swapped randomly as well :)
