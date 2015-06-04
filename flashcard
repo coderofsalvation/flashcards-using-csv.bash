@@ -2,7 +2,7 @@
 # all the (basic) good stuff of ANKI in few lines of bash
 # Happy learning!
 #
-SELF_DIR="$( dirname "$(readlink -f "$0")" )"; cd $SELF_DIR
+SELF_DIR="$( dirname "$(readlink -f "$0")" )"; 
 flashcards_csv=""
 flashcards_arr=()
 blacklist=()
