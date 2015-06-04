@@ -5,7 +5,7 @@ all the (basic) good stuff of ANKI in few lines of bash
 
 ## Why
 
-I had a tiny embedded linux device which i wanted to use for learning a language.
+Learning while slacking is cool
 
 ## How to use 
 
