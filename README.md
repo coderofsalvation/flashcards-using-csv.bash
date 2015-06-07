@@ -29,14 +29,16 @@ We would get this (random) question in the terminal:
 
       i am a boy
 
+      >
+
 
 Imagine you need to translate this in another language.
-Think of the answer and press enter.
+Think or type the answer and press enter.
 Now you'll see:
 
       i am a boy
       
-      
+      >
       ik ben een jongen
       
       
